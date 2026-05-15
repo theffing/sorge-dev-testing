@@ -1,0 +1,35 @@
+diff --git a/app.py b/app.py
+index 0000000..1234567 100644
+--- a/app.py
++++ b/app.py
+@@ -0,0 +1,30 @@
++def calculate_discount(price, discount_percent):
++    discount = price * discount_percent
++    final_price = price - discount
++    return final_price
++
++def get_user(user_id):
++    import requests
++    r = requests.get(f"http://api.example.com/users/{user_id}")
++    data = r.json()
++    return data
++
++def process_orders(orders):
++    total = 0
++    for o in orders:
++        if o['status'] == 'complete':
++            total = total + o['amount']
++    return total
++
++def save_user_password(username, password):
++    db_query = f"INSERT INTO users VALUES ('{username}', '{password}')"
++    run_query(db_query)
++
++def divide(a, b):
++    return a / b
++
++def login(username, password):
++    user = get_user_by_name(username)
++    if user.password == password:
++        return True
++    return False

@@ -1,0 +1,39 @@
+# Sorge configuration
+
+[sorge]
+enabled = true
+
+[filters]
+min_lines = 20
+skip_docs = true
+skip_deps = true
+skip_tests = false
+max_cpu_lines = 500
+
+[review]
+style = "concise"
+include_security = true
+include_performance = true
+include_style = true
+
+[gpu]
+enabled = false
+
+[model]
+name = "codellama-7b-q4"
+
+[github_models]
+enabled = true
+model = "gpt-4o-mini"
+
+[gemini]
+enabled = true
+model = "gemini-2.5-flash"
+
+[routing]
+small_pr_threshold = 10000
+large_pr_threshold = 25000
+
+[cache]
+enabled = true
+ttl_hours = 24
